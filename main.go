@@ -8,7 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) < 3 {
-		fmt.Println("must be: ggo run main.go [operation] [range]")
+		fmt.Println("go run main.go [operation] [range]")
 		os.Exit(0)
 	}
 	s := os.Args[1]
@@ -25,9 +25,31 @@ func main() {
 			sub(head)
 		case s == "div":
 			div(head)
+		case s == "mod":
+			mod(head)
 		default:
-			fmt.Println(`Not Known Operation ["multi", "add", "min", "div"]`)
+			fmt.Println("Not Known Operation")
 		}
+	}
+}
+
+func mod(head int) {
+	fmt.Printf("%5s", "X")
+	for i := 0; i <= head; i++ {
+		fmt.Printf("%5d", i)
+	}
+	fmt.Println()
+	for i := 0; i <= head; i++ {
+		fmt.Printf("%5d", i)
+
+		for j := 0; j <= head; j++ {
+			if j != 0 {
+				fmt.Printf("%5d", i%j)
+			} else {
+				fmt.Printf("%5d", 0)
+			}
+		}
+		fmt.Println()
 	}
 }
 
