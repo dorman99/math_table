@@ -28,7 +28,7 @@ func main() {
 		case s == "mod":
 			mod(head)
 		default:
-			fmt.Println("Not Known Operation")
+			fmt.Println(`Operation Must be: ["multi", "add", "min", "div", or "mod"]`)
 		}
 	}
 }
